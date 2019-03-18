@@ -20,7 +20,7 @@ class Contact(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        reverse('users:contact-index')
+        return reverse('users:contact-index')
 
 
 
