@@ -7,24 +7,24 @@
 <div class="row">
 {% if contacts %}
     {% for contact in contacts %}
-        <div class="col-sm-3 {% if contact.is_male %}text-info {% else %}text-danger{% endif %} my-1">
+        <div class="col-sm-3 {% if contact.is_male %}text-primary {% else %}text-danger{% endif %} my-1">
             <img src="{{ contact.cover.url }}" class="img img-responsive" alt="" style="height: 100px; width: 100%;">
-            <div class="card card-body">
+            <div class="card">
+            <div class="card-header" style="color:white; background-color:{% if contact.is_male %}blue;{% else %}purple;{% endif %}">
                 <p class="p-item"><i class="{% if contact.is_male %}fas fa-mars{% else %}fas fa-venus{% endif %}"></i>&nbsp; {{ contact.name }}</p>
-
-            <div class="contact-content">
+            </div>
+            <div class="card-body">
                     <p class="p-item"><i class="fas fa-envelope"></i> {{ contact.email }}</p>
                     <p class="p-item"><i class="fas fa-phone"></i> {{ contact.telephone }}</p>
                     <p class="p-item"><i class="fas fa-user-circle"></i> {{ contact.relation }}</p>
                     <p class="p-item"><i class="fas fa-globe"></i> {{ contact.residence }}</p>
-            </div>
-                <div>
                 <a href="{% url 'users:contact-update' contact.id %}" class="btn btn-info btn-xs">
                     <span class="fas fa-edit"></span>&nbsp;
                 </a>
                 <a href="{% url 'users:contact-delete' contact.id %}" class="btn btn-danger btn-xs">
                     <span class="fas fa-trash"></span>&nbsp;
                 </a>
+
                 </div>
         </div>
         </div>
