@@ -7,11 +7,11 @@
 <div class="row">
 {% if contacts %}
     {% for contact in contacts %}
-        <div class="col-sm-3 text-danger">
+        <div class="col-sm-3 {% if contact.is_male %}text-info {% else %}text-danger{% endif %}">
             <img src="{{ contact.cover.url }}" class="img img-responsive" alt="" style="height: 150px; width: 100%;">
             <div class="card card-body">
             <div class="user-name">
-                <p class="p-item"><i class="fas fa-venus"></i>&nbsp; {{ contact.name }}</p>
+                <p class="p-item"><i class="{% if contact.is_male %}fas fa-mars{% else %}fas fa-venus{% endif %}"></i>&nbsp; {{ contact.name }}</p>
             </div>
             <div class="contact-content">
                     <p class="p-item"><i class="fas fa-envelope"></i> {{ contact.email }}</p>

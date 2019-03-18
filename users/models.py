@@ -8,6 +8,7 @@ from django.utils import timezone
 
 class Contact(models.Model):
     name = models.CharField(max_length=45)
+    is_male = models.BooleanField(default=True)
     cover = models.FileField()
     email = models.EmailField()
     telephone = models.CharField(max_length=12)
