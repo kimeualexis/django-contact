@@ -1,0 +1,38 @@
+{% extends 'users/base.html' %}
+
+{% block title %}My contacts{% endblock %}
+
+{% block content %}
+    <br>
+<div class="row">
+{% if contacts %}
+    {% for contact in contacts %}
+        <div class="col-sm-3 text-danger">
+            <img src="{{ contact.cover.url }}" class="img img-responsive" alt="" style="height: 150px; width: 100%;">
+            <div class="card card-body">
+            <div class="user-name">
+                <p class="p-item"><i class="fas fa-venus"></i>&nbsp; {{ contact.name }}</p>
+            </div>
+            <div class="contact-content">
+                    <p class="p-item"><i class="fas fa-envelope"></i> {{ contact.email }}</p>
+                    <p class="p-item"><i class="fas fa-phone"></i> {{ contact.telephone }}</p>
+                    <p class="p-item"><i class="fas fa-user-circle"></i> {{ contact.relation }}</p>
+                    <p class="p-item"><i class="fas fa-globe"></i> {{ contact.residence }}</p>
+            </div>
+                <div>
+                <a href="" class="btn btn-info btn-xs">
+                    <span class="fas fa-edit"></span>&nbsp;
+                </a>
+                <a href="" class="btn btn-danger btn-xs">
+                    <span class="fas fa-trash"></span>&nbsp;
+                </a>
+                </div>
+        </div>
+        </div>
+    {% endfor %}
+
+{% endif %}
+
+
+</div>
+{% endblock %}
