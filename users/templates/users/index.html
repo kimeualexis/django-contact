@@ -8,9 +8,9 @@
 {% if contacts %}
     {% for contact in contacts %}
         <div class="col-sm-3 {% if contact.is_male %}text-primary {% else %}text-danger{% endif %} my-1">
-            <img src="{{ contact.cover.url }}" class="img img-responsive" alt="" style="height: 100px; width: 100%;">
+            <img src="{{ contact.cover.url }}" class="img img-responsive" alt="" style="height: 30%; width: 100%;">
             <div class="card">
-            <div class="card-header" style="color:white; background-color:{% if contact.is_male %}blue;{% else %}purple;{% endif %}">
+            <div class="card-header" style="color:white; background-color:{% if contact.is_male %}darkblue;{% else %}red;{% endif %}">
                 <p class="p-item"><i class="{% if contact.is_male %}fas fa-mars{% else %}fas fa-venus{% endif %}"></i>&nbsp; {{ contact.name }}</p>
             </div>
             <div class="card-body">
@@ -30,6 +30,34 @@
         </div>
     {% endfor %}
 
+    {% else %}
+    <div class="container" style="padding-top: 7%;">
+    <div class="row pt-5">
+    <div class="col-sm-4">
+    <div class="card card-body">
+        <i class="text-center fas fa-book-open fa-2x"></i>
+        <hr>
+        <p class="text-center">This Applications lets you create your contacts and store them.</p>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="card card-body">
+        <i class="text-center fas fa-users fa-2x"></i>
+        <hr>
+        <p class="text-center">The Application lets you categorize your contacts as friends, family or colleagues.</p>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="card card-body">
+        <i class="text-center fas fa-envelope fa-2x"></i>
+        <hr>
+        <p class="text-center">The Application enables you to send messages to your contacts.</p>
+    </div>
+    </div>
+    </div>
+    </div>
 {% endif %}
 
 
